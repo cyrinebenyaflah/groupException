@@ -3,6 +3,8 @@ package tn.esprit.entities;
 import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -20,6 +22,25 @@ public class Auction implements Serializable {
 	private java.util.Date dateFin;
 	private String auctionPhoto;
 	private int saleAmount;
+	private Product product;
+	private Seller seller;
+	private List<Client> clients;
+	
+	
+	@ManyToMany
+	public List<Client> getClients() {
+		return clients;
+	}
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
+	}
+	@OneToOne
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
 	private static final long serialVersionUID = 1L;
 
 	public Auction() {
@@ -69,6 +90,14 @@ public class Auction implements Serializable {
 	public void setSaleAmount(int saleAmount) {
 		this.saleAmount = saleAmount;
 	}
+	@ManyToOne
+	public Seller getSeller() {
+		return seller;
+	}
+	public void setSeller(Seller seller) {
+		this.seller = seller;
+	}
    
+	
 	
 }

@@ -23,6 +23,16 @@ public class Product implements Serializable {
 	private DeliveryMan delivaryman;
 	private Seller seller;
 	private Expert expert;
+	private Auction aucion;
+	private Category category;
+	
+	@OneToOne(mappedBy="product")
+	public Auction getAucion() {
+		return aucion;
+	}
+	public void setAucion(Auction aucion) {
+		this.aucion = aucion;
+	}
 	private static final long serialVersionUID = 1L;
 
 	public Product() {
@@ -98,6 +108,13 @@ public class Product implements Serializable {
 	}
 	public void setExpert(Expert expert) {
 		this.expert = expert;
+	}
+	@ManyToOne
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	
    

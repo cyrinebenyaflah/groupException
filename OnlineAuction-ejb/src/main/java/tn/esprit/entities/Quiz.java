@@ -2,6 +2,8 @@ package tn.esprit.entities;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -15,6 +17,8 @@ public class Quiz implements Serializable {
 	
 	private int idQuiz;
 	private String nameQuiz;
+	private List<Question> questions;
+	private List<Client> clients;
 	private static final long serialVersionUID = 1L;
 
 	public Quiz() {
@@ -35,5 +39,21 @@ public class Quiz implements Serializable {
 	public void setNameQuiz(String nameQuiz) {
 		this.nameQuiz = nameQuiz;
 	}
+	@OneToMany(mappedBy="quiz")
+	public List<Question> getQuestions() {
+		return questions;
+	}
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
+	@ManyToMany(mappedBy="quiz")
+	public List<Client> getClients() {
+		return clients;
+	}
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
+	}
    
+	
+	
 }

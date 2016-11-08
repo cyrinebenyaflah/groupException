@@ -19,6 +19,7 @@ public class Question implements Serializable {
 	private String suggestion1;
 	private String suggestion2;
 	private String answer;
+	private Quiz quiz;
 	private static final long serialVersionUID = 1L;
 
 	public Question() {
@@ -67,5 +68,14 @@ public class Question implements Serializable {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
+	@ManyToOne
+	public Quiz getQuiz() {
+		return quiz;
+	}
+	public void setQuiz(Quiz quiz) {
+		this.quiz = quiz;
+	}
+	
+	
    
 }

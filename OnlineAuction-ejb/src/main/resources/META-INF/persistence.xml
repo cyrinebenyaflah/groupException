@@ -2,6 +2,22 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="OnlineAuction-ejb">
 		<jta-data-source>java:/auctiondatasource</jta-data-source>
+		<class>tn.esprit.entities.AggregateDemandAuction</class>
+		<class>tn.esprit.entities.Auction</class>
+		<class>tn.esprit.entities.Category</class>
+		<class>tn.esprit.entities.Client</class>
+		<class>tn.esprit.entities.Comment</class>
+		<class>tn.esprit.entities.DeliveryMan</class>
+		<class>tn.esprit.entities.DutchAuction</class>
+		<class>tn.esprit.entities.EnglishAuction</class>
+		<class>tn.esprit.entities.Expert</class>
+		<class>tn.esprit.entities.NegociatedPriceAuction</class>
+		<class>tn.esprit.entities.Product</class>
+		<class>tn.esprit.entities.Question</class>
+		<class>tn.esprit.entities.Quiz</class>
+		<class>tn.esprit.entities.Seller</class>
+		<class>tn.esprit.entities.Subject</class>
+		<class>tn.esprit.entities.User</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 		</properties>
